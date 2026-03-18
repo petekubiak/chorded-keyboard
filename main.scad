@@ -1,3 +1,4 @@
+SIDE = "right";
 GRID_SIZE = 19.05;
 MX_SOCKET = [["height", 8.2], ["tolerance", -0.11]];
 BASE_HEIGHT = 4.2;
@@ -62,7 +63,7 @@ function mcu_board_housing_position() =
     let(
         housing_x = mcu_board_housing().x,
         x = left(INDEX) - housing_x,
-        y = top(THUMB3)
+        y = TRRS_OUTER_POSITION.y + TRRS_OUTER.y
     )
     [x, y, 0];
 function mcu_board_housing_centre_xy() =
@@ -125,9 +126,7 @@ BASE = [
         top_left(MIDDLE),
         diag_l2r(top_left(MIDDLE), top(INDEX)),
         top_left(INDEX),
-        diag_l2r(top_left(INDEX), mcu_board_housing_position().y + mcu_board_housing().y),
-        [mcu_board_housing_position().x, mcu_board_housing_position().y],
-        diag_l2r([mcu_board_housing_position().x, mcu_board_housing_position().y], TRRS_OUTER_POSITION.y + TRRS_OUTER.y),
+        diag_l2r(top_left(INDEX), TRRS_OUTER_POSITION.y + TRRS_OUTER.y),
         [TRRS_OUTER_POSITION.x, TRRS_OUTER_POSITION.y + TRRS_OUTER.y],
         top_left(THUMB1),
     ]]
@@ -275,8 +274,10 @@ module MakeCutouts() {
         MXCutout(get(switch, "position"));
     }
     IoCutout();
-    McuCutout();
-    McuPortCutout();
+    if (SIDE == "right") {
+        McuCutout();
+        McuPortCutout();
+    }
     TrrsPortCutout();
     TrrsCavityCutout();
     MakeChannels();
@@ -293,11 +294,6 @@ module MakeChannels() {
     rotate([0, 0, 90])
     mirror([0, 1, 0])
         cube([GRID_SIZE / 1.5, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
-
-    translate(get(THUMB2, "position"))
-    translate([0,0, -0.1])
-    rotate([0, 0, 90])
-        cube([GRID_SIZE, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
 
     translate(get(THUMB2, "position"))
     translate([0,0, -0.1])
@@ -328,10 +324,17 @@ module MakeChannels() {
     rotate([0, 0, 180])
         cube([GRID_SIZE * 2, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
 
-    translate(MCU_BOARD_CENTRE)
-    translate([0, -0.9, -0.1])
-    mirror([0, 1, 0])
-        cube([GRID_SIZE * 2, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
+    if (SIDE == "right") {
+        translate(get(THUMB2, "position"))
+        translate([0,0, -0.1])
+        rotate([0, 0, 90])
+            cube([GRID_SIZE, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
+
+        translate(MCU_BOARD_CENTRE)
+        translate([0, -0.9, -0.1])
+        mirror([0, 1, 0])
+            cube([GRID_SIZE * 2, CHANNEL_XSEC.x, CHANNEL_XSEC.y]);
+    }
 }
 
 module MakeTrrsOuter() {
@@ -340,16 +343,22 @@ module MakeTrrsOuter() {
 }
 
 module MakeMcuHousing() {
-    translate(mcu_board_housing_position())
-    cube(mcu_board_housing());
+    if (SIDE == "right") {
+        translate(mcu_board_housing_position())
+        cube(mcu_board_housing());
+    }
 }
 
+MIRROR = SIDE == "right" ? 0 : 1;
+
+mirror([MIRROR, 0, 0])
 difference() {
     union() {
         MakeSockets();
         MakeMcuHousing();
         MakeBaseplate();
         MakeTrrsOuter();
+        
     }
     MakeCutouts();
 }
