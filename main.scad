@@ -1,4 +1,6 @@
 SIDE = "right";
+MAKE_BASE = true;
+
 GRID_SIZE = 19.05;
 MX_SOCKET = [["height", 8.2], ["tolerance", -0.11]];
 BASE_HEIGHT = 5;
@@ -51,14 +53,14 @@ IO_BOARD_BORDER_BOTTOM_RIGHT = [
     IO_BOARD_POSITION.y - get(IO_BOARD, "size").y / 2 - get(IO_BOARD, "border")
 ];
 
-function mcu_board_housing() =
+function mcu_board_housing(height) =
     let(
         board = get(MCU_BOARD, "size"),
         tolerance = get(MCU_BOARD, "tolerance"),
         border = get(MCU_BOARD, "border"),
         housing = grow(board, 2 * (tolerance + border))
     )
-    [housing.x, housing.y, BASE_HEIGHT];
+    [housing.x, housing.y, height];
 function mcu_board_housing_position() =
     let(
         housing_x = mcu_board_housing().x,
@@ -106,7 +108,6 @@ TRRS_OUTER_POSITION = [left(THUMB1), top(THUMB1), 0];
 CHANNEL_XSEC = [4, 2];
 
 BASE = [
-    ["height", 4.2],
     ["polygon", [
         bottom_left(THUMB1),
         bottom_right(THUMB1),
@@ -266,8 +267,8 @@ module MakeSockets() {
         }
 }
 
-module MakeBaseplate() {
-    linear_extrude(get(BASE, "height"))
+module MakeBaseplate(height) {
+    linear_extrude(height)
         polygon(get(BASE, "polygon"));
 }
 
@@ -344,23 +345,31 @@ module MakeTrrsOuter() {
         cube(TRRS_OUTER);
 }
 
-module MakeMcuHousing() {
+module MakeMcuHousing(height) {
     if (SIDE == "right") {
         translate(mcu_board_housing_position())
-        cube(mcu_board_housing());
+        cube(mcu_board_housing(height));
     }
 }
 
 MIRROR = SIDE == "right" ? 0 : 1;
 
 mirror([MIRROR, 0, 0])
-difference() {
-    union() {
-        MakeSockets();
-        MakeMcuHousing();
-        MakeBaseplate();
-        MakeTrrsOuter();
-        
+if (!MAKE_BASE) {
+    difference() {
+        union() {
+            MakeSockets();
+            MakeMcuHousing();
+            MakeBaseplate(BASE_HEIGHT);
+            MakeTrrsOuter();
+        }
+        MakeCutouts();
     }
-    MakeCutouts();
+} else {
+    difference() {
+        union() {
+            MakeBaseplate(BASE_HEIGHT / 2);
+            MakeMcuHousing(BASE_HEIGHT / 2);
+        }
+    }
 }
