@@ -34,7 +34,7 @@ MCU_BOARD = [
 ];
 
 TRRS = [
-    ["size", [12.23, 6.06, 6.11]],
+    ["size", [13.23, 7.93, 6.11]],
     ["port_dia", 5.53],
     ["tolerance", 0.1],
     ["border", 3],
@@ -63,7 +63,7 @@ function mcu_board_housing_position() =
     let(
         housing_x = mcu_board_housing().x,
         x = left(INDEX) - housing_x,
-        y = TRRS_OUTER_POSITION.y + TRRS_OUTER.y
+        y = top(THUMB3)
     )
     [x, y, 0];
 function mcu_board_housing_centre_xy() =
