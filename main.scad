@@ -359,6 +359,18 @@ module MakeMcuHousing(height) {
     }
 }
 
+module MakeSupport() {
+    let(
+        xy = top_left(LITTLE)
+    ){
+        translate([xy.x, xy.y, 0])
+        rotate([0, 0, 45])
+        translate([-3, -3, 0])
+
+            cube([6, 6, get(MX_SOCKET, "height")]);  
+    }
+}
+
 module MakeScrewHoles() {
     let(
         steps = 25,
@@ -382,6 +394,7 @@ if (!MAKE_BASE) {
             MakeMcuHousing();
             MakeBaseplate(BASE_HEIGHT);
             MakeTrrsOuter();
+            MakeSupport();
         }
         MakeCutouts();
         MakeScrewHoles();
