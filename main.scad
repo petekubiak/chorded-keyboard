@@ -1,7 +1,7 @@
 SIDE = "right";
 GRID_SIZE = 19.05;
 MX_SOCKET = [["height", 8.2], ["tolerance", -0.11]];
-BASE_HEIGHT = 4.2;
+BASE_HEIGHT = 5;
 
 THUMB1 = [["position", GridCoords(0, 0, 0)]];
 THUMB2 = [["position", GridCoords(1, 0.25, 0)]];
@@ -22,7 +22,7 @@ SWITCH_PLACEMENT = [
 ];
 
 IO_BOARD = [
-    ["size", [38.12, 22.15, 10]],
+    ["size", [38.12, 22.15, 11]],
     ["tolerance", 0.1],
     ["border", 3],
 ];
@@ -30,7 +30,7 @@ MCU_BOARD = [
     ["size", [33.34, 18.35, 10]],
     ["tolerance", 0.1],
     ["border", 3],
-    ["port", [7.98, 2.92]]
+    ["port", [7.98, 3.52]]
 ];
 
 TRRS = [
@@ -77,7 +77,7 @@ function mcu_board_cavity() =
         tolerance = get(MCU_BOARD, "tolerance"),
         size = grow(get(MCU_BOARD, "size"), 2 * tolerance)
     )
-    [size.x, size.y, 10];
+    [size.x, size.y, 11];
 
 
 
@@ -98,7 +98,8 @@ MCU_BOARD_BORDER_BOTTOM_LEFT = [
 
 TRRS_CAVITY = grow(get(TRRS, "size"), get(TRRS, "tolerance"));
 
-TRRS_OUTER = grow(TRRS_CAVITY, get(TRRS, "border"));
+TRRS_OUTER_INIT = grow(TRRS_CAVITY, get(TRRS, "border"));
+TRRS_OUTER = [TRRS_OUTER_INIT.x, TRRS_OUTER_INIT.y, get(MX_SOCKET, "height")];
 
 TRRS_OUTER_POSITION = [left(THUMB1), top(THUMB1), 0];
 
