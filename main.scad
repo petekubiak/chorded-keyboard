@@ -230,11 +230,12 @@ module McuCutout() {
 module McuPortCutout() {
     let(
         port = get(MCU_BOARD, "port"),
-        x_offset = -mcu_board_housing().x / 2
+        x_offset = -mcu_board_housing().x / 2,
+        y_offset = MCU_BOARD_CENTRE.y - port.x / 2
     ){
-        translate(MCU_BOARD_CENTRE)
-        translate([x_offset, 0, 0])
-        cube([40, port.x, port.y * 2], center = true);
+        translate([mcu_board_housing_position().x, y_offset, 0])
+        translate([-0.1, 0, -0.1])
+        cube([5, port.x, port.y]);
     }
 }
 
