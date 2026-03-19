@@ -134,6 +134,13 @@ BASE = [
     ]]
 ];
 
+SCREW_HOLES = [
+    [left(THUMB2), top(THUMB2) + 2],
+    [left(LITTLE) - 4, bottom(LITTLE)],
+    [left(LITTLE) + 6, top(LITTLE) + 6],
+    [left(INDEX) - 2, top(INDEX) - 7]
+];
+
 function is_in(set, value) = set[0]==value ? true : false;
 function tail(set) = len(set) >1 ? [for(i=[1:1:len(set)-1]) set[i]] : undef;
 function head(set) = is_list(set) ? set[0] : undef;
@@ -352,6 +359,19 @@ module MakeMcuHousing(height) {
     }
 }
 
+module MakeScrewHoles() {
+    let(
+        steps = 25,
+        diameter = 1.9,
+        height = BASE_HEIGHT - 1.2
+    ){
+        for(hole = SCREW_HOLES) {
+            translate([hole.x, hole.y, 0])
+            cylinder(h=height, d=diameter, $fn=steps, center = true);
+        }
+    }
+}
+
 MIRROR = SIDE == "right" ? 0 : 1;
 
 mirror([MIRROR, 0, 0])
@@ -364,6 +384,7 @@ if (!MAKE_BASE) {
             MakeTrrsOuter();
         }
         MakeCutouts();
+        MakeScrewHoles();
     }
 } else {
     difference() {
@@ -371,5 +392,7 @@ if (!MAKE_BASE) {
             MakeBaseplate(BASE_HEIGHT / 2);
             MakeMcuHousing(BASE_HEIGHT / 2);
         }
+        translate([0, 0, BASE_HEIGHT / 4])
+        MakeScrewHoles();
     }
 }
