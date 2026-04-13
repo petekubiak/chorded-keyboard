@@ -1,0 +1,60 @@
+{
+  "manufacturer": "KBJ",
+  "keyboard_name": "KBJ Chordie",
+  "maintainer": "kbjunky",
+  "author": "KBJ",
+  "documentation": "https://github.com/kbjunky/Chordie",
+  "notes": "Come in Chordie they all chord in here",
+  "url": "https://github.com/kbjunky/Chordie",
+  "bootloader": "caterina",
+  "debounce": 5,
+  "diode_direction": "COL2ROW",
+  "features": {
+    "extrakey": true,
+    "mousekey": true,
+    "pointing_device": true
+  },
+  "matrix_size": {
+    "cols": 17,
+    "rows": 1
+  },
+  "mouse_key": {
+    "enabled": true
+  },
+  "processor": "atmega32u4",
+  "qmk": {
+    "locking": {
+      "enabled": true,
+      "resync": true
+    }
+  },
+  "usb": {
+    "device_version": "1.0.0",
+    "pid": "0x6511",
+    "vid": "0xBEEF"
+  },
+  "version": 1,
+  "layout_aliases": {
+    "LAYOUT_Chordie": "LAYOUT"
+  },
+  "layouts": {
+    "LAYOUT": {
+      "layout": [
+        {"label": "LL", "matrix": [0, 16], "x": 0, "y": 0},
+        {"label": "LR", "matrix": [0, 15], "x": 0, "y": 1},
+        {"label": "LM", "matrix": [0, 14], "x": 0, "y": 2},
+        {"label": "LI", "matrix": [0, 13], "x": 0, "y": 3},
+        {"label": "LTH2", "matrix": [0, 11], "x": 0, "y": 4},
+        {"label": "LTH1", "matrix": [0, 10], "x": 0, "y": 5},
+        {"label": "LTH0", "matrix": [0, 9], "x": 0, "y": 6},
+        {"label": "RTH0", "matrix": [0, 0], "x": 0, "y": 7},
+        {"label": "RTH1", "matrix": [0, 1], "x": 0, "y": 8},
+        {"label": "RTH2", "matrix": [0, 2], "x": 0, "y": 9},
+        {"label": "RI", "matrix": [0, 4], "x": 0, "y": 10},
+        {"label": "RM", "matrix": [0, 5], "x": 0, "y": 11},
+        {"label": "RR", "matrix": [0, 6], "x": 0, "y": 12},
+        {"label": "RL", "matrix": [0, 7], "x": 0, "y": 13},
+      ]
+    }
+  }
+}
