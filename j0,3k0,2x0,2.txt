@@ -1,0 +1,141 @@
+Optimised score: 8.573877
+
+=== Optimised chord layout ===
+
+   o -> kN               size=1  effort=0.000  freq=9480
+   d -> kT               size=1  effort=0.000  freq=7320
+   s -> kI               size=1  effort=0.180  freq=9527
+   l -> kE               size=1  effort=0.180  freq=5792
+   t -> kS               size=1  effort=0.500  freq=12511
+   r -> kO               size=1  effort=0.500  freq=7845
+   e -> kA               size=1  effort=1.100  freq=15345
+   a -> kP               size=1  effort=1.100  freq=10055
+   . -> kT+kN            size=2  effort=0.950  freq=2005
+   p -> kT+kI            size=2  effort=1.130  freq=3128
+   j -> kE+kN            size=2  effort=1.130  freq=5229
+   c -> kE+kI            size=2  effort=1.310  freq=5754
+   h -> kT+kO            size=2  effort=1.550  freq=5760
+   : -> kS+kN            size=2  effort=1.550  freq=3507
+   n -> kE+kO            size=2  effort=1.730  freq=7819
+   g -> kS+kI            size=2  effort=1.730  freq=5688
+   w -> kE+kT            size=2  effort=1.780  freq=5553
+   - -> kN+kI            size=2  effort=1.780  freq=986
+   m -> kS+kO            size=2  effort=2.150  freq=3886
+   i -> kA+kN            size=2  effort=2.330  freq=9815
+   f -> kT+kP            size=2  effort=2.330  freq=4451
+   b -> kI+kO            size=2  effort=2.380  freq=2347
+   ) -> kS+kE            size=2  effort=2.380  freq=1233
+   _ -> kE+kP            size=2  effort=2.510  freq=1539
+   " -> kA+kI            size=2  effort=2.510  freq=1054
+   k -> kS+kT            size=2  effort=2.550  freq=3699
+   , -> kN+kO            size=2  effort=2.550  freq=1268
+   3 -> kS+kP            size=2  effort=2.930  freq=615
+   [ -> kA+kO            size=2  effort=2.930  freq=532
+   x -> kI+kP            size=2  effort=3.510  freq=1996
+   / -> kA+kE            size=2  effort=3.510  freq=560
+   y -> kA+kS            size=2  effort=3.580  freq=2024
+   1 -> kO+kP            size=2  effort=3.580  freq=582
+   ( -> kN+kP            size=2  effort=3.680  freq=1192
+   2 -> kA+kT            size=2  effort=3.680  freq=604
+   u -> kA+kP            size=2  effort=3.710  freq=5001
+   ; -> kT+kN+kI         size=3  effort=2.730  freq=490
+   ` -> kE+kT+kN         size=3  effort=2.730  freq=410
+   = -> kE+kN+kI         size=3  effort=2.910  freq=498
+   & -> kE+kT+kI         size=3  effort=2.910  freq=118
+   q -> kT+kI+kO         size=3  effort=3.430  freq=1062
+   | -> kS+kN+kI         size=3  effort=3.430  freq=72
+   % -> kS+kE+kN         size=3  effort=3.430  freq=36
+   ^ -> kE+kT+kO         size=3  effort=3.430  freq=17
+   < -> kT+kN+kO         size=3  effort=3.600  freq=94
+   \ -> kS+kT+kN         size=3  effort=3.600  freq=71
+   5 -> kE+kI+kO         size=3  effort=3.610  freq=287
+   # -> kS+kE+kI         size=3  effort=3.610  freq=210
+   v -> kS+kT+kI         size=3  effort=3.780  freq=1302
+   $ -> kE+kN+kO         size=3  effort=3.780  freq=43
+   z -> kS+kI+kO         size=3  effort=4.130  freq=698
+   { -> kS+kE+kO         size=3  effort=4.130  freq=400
+   8 -> kS+kT+kO         size=3  effort=4.300  freq=165
+   6 -> kS+kN+kO         size=3  effort=4.300  freq=110
+   ' -> kE+kT+kP         size=3  effort=4.390  freq=682
+   9 -> kA+kN+kI         size=3  effort=4.390  freq=248
+   ] -> kN+kI+kO         size=3  effort=4.530  freq=472
+   £ -> kS+kE+kT         size=3  effort=4.530  freq=25
+   * -> kT+kI+kP         size=3  effort=4.740  freq=73
+   @ -> kA+kE+kN         size=3  effort=4.740  freq=51
+   4 -> kA+kS+kN         size=3  effort=4.910  freq=466
+   ! -> kA+kT+kN         size=3  effort=4.910  freq=299
+   > -> kT+kO+kP         size=3  effort=4.910  freq=209
+   } -> kT+kN+kP         size=3  effort=4.910  freq=152
+   0 -> kA+kE+kI         size=3  effort=4.920  freq=365
+   ? -> kE+kI+kP         size=3  effort=4.920  freq=272
+   7 -> kA+kT+kI         size=3  effort=5.090  freq=130
+   ~ -> kA+kS+kI         size=3  effort=5.090  freq=82
+
+Overlap bigrams: 26527 / 135788 (19.54%)
+Top overlapping bigrams:
+  'j' -> 'j'  count=2963     overlap=2
+  'k' -> 'k'  count=1755     overlap=2
+  'l' -> 'l'  count=1126     overlap=1
+  'x' -> 'x'  count=685      overlap=2
+  's' -> 's'  count=632      overlap=1
+  'u' -> 'u'  count=552      overlap=2
+  'd' -> 'd'  count=552      overlap=1
+  'i' -> 'o'  count=544      overlap=1
+  'h' -> 'h'  count=441      overlap=2
+  'w' -> 'h'  count=388      overlap=1
+  'n' -> 'c'  count=383      overlap=1
+  'r' -> 'r'  count=362      overlap=1
+  ':' -> ':'  count=359      overlap=2
+  'f' -> 'f'  count=354      overlap=2
+  'e' -> 'e'  count=302      overlap=1
+
+Top 20 bigrams by score contribution:
+  'j' -> 'j'  contrib=0.265249  weight=0.040478  tcost=6.553  overlap=2  kE+kN -> kE+kN
+  'l' -> 'l'  contrib=0.210378  weight=0.051274  tcost=4.103  overlap=1  kE -> kE
+  'u' -> 'u'  contrib=0.207877  weight=0.025136  tcost=8.270  overlap=2  kA+kP -> kA+kP
+  'h' -> 'h'  contrib=0.137057  weight=0.020082  tcost=6.825  overlap=2  kT+kO -> kT+kO
+  'k' -> 'k'  contrib=0.121074  weight=0.015983  tcost=7.575  overlap=2  kS+kT -> kS+kT
+  'f' -> 'f'  contrib=0.118240  weight=0.016120  tcost=7.335  overlap=2  kT+kP -> kT+kP
+  's' -> 's'  contrib=0.118081  weight=0.028779  tcost=4.103  overlap=1  kI -> kI
+  ':' -> ':'  contrib=0.111573  weight=0.016348  tcost=6.825  overlap=2  kS+kN -> kS+kN
+  'd' -> 'd'  contrib=0.099288  weight=0.025136  tcost=3.950  overlap=1  kT -> kT
+  'i' -> 'o'  contrib=0.087197  weight=0.024772  tcost=3.520  overlap=1  kA+kN -> kN
+  'c' -> 'c'  contrib=0.080923  weight=0.012067  tcost=6.706  overlap=2  kE+kI -> kE+kI
+  '-' -> '-'  contrib=0.079481  weight=0.010883  tcost=7.303  overlap=2  kN+kI -> kN+kI
+  'g' -> 'g'  contrib=0.079439  weight=0.011384  tcost=6.978  overlap=2  kS+kI -> kS+kI
+  'r' -> 'r'  contrib=0.072119  weight=0.016484  tcost=4.375  overlap=1  kO -> kO
+  'e' -> 'e'  contrib=0.067179  weight=0.013752  tcost=4.885  overlap=1  kA -> kA
+  'm' -> 'm'  contrib=0.066028  weight=0.009107  tcost=7.250  overlap=2  kS+kO -> kS+kO
+  'n' -> 'n'  contrib=0.065140  weight=0.009335  tcost=6.978  overlap=2  kE+kO -> kE+kO
+  '.' -> '.'  contrib=0.063824  weight=0.009973  tcost=6.400  overlap=2  kT+kN -> kT+kN
+  'n' -> 'c'  contrib=0.062664  weight=0.017441  tcost=3.593  overlap=1  kE+kO -> kE+kI
+  'u' -> 'e'  contrib=0.060860  weight=0.013661  tcost=4.455  overlap=1  kA+kP -> kA
+
+Top 20 NON-SELF bigrams by score contribution:
+  'i' -> 'o'  contrib=0.087197  weight=0.024772  tcost=3.520  overlap=1  kA+kN -> kN
+  'n' -> 'c'  contrib=0.062664  weight=0.017441  tcost=3.593  overlap=1  kE+kO -> kE+kI
+  'u' -> 'e'  contrib=0.060860  weight=0.013661  tcost=4.455  overlap=1  kA+kP -> kA
+  'w' -> 'h'  contrib=0.060779  weight=0.017668  tcost=3.440  overlap=1  kE+kT -> kT+kO
+  'u' -> 'i'  contrib=0.056978  weight=0.013023  tcost=4.375  overlap=1  kA+kP -> kA+kN
+  't' -> 'e'  contrib=0.053241  weight=0.053779  tcost=0.990  overlap=0  kS -> kA
+  ':' -> 'w'  contrib=0.046054  weight=0.095946  tcost=0.480  overlap=0  kS+kN -> kE+kT
+  'o' -> 'r'  contrib=0.045532  weight=0.045992  tcost=0.990  overlap=0  kN -> kO
+  'l' -> 'e'  contrib=0.040979  weight=0.041393  tcost=0.990  overlap=0  kE -> kA
+  'i' -> 'n'  contrib=0.039978  weight=0.083287  tcost=0.480  overlap=0  kA+kN -> kE+kO
+  't' -> 'h'  contrib=0.039606  weight=0.110017  tcost=0.360  overlap=0  kS -> kT+kO
+  'e' -> 't'  contrib=0.037553  weight=0.037932  tcost=0.990  overlap=0  kA -> kS
+  't' -> 'y'  contrib=0.035918  weight=0.007650  tcost=4.695  overlap=1  kS -> kA+kS
+  'f' -> 'a'  contrib=0.035096  weight=0.007878  tcost=4.455  overlap=1  kT+kP -> kP
+  'f' -> '.'  contrib=0.033052  weight=0.009608  tcost=3.440  overlap=1  kT+kP -> kT+kN
+  's' -> 'o'  contrib=0.031557  weight=0.031876  tcost=0.990  overlap=0  kI -> kN
+  'x' -> 'c'  contrib=0.031414  weight=0.008743  tcost=3.593  overlap=1  kI+kP -> kE+kI
+  'd' -> 'e'  contrib=0.030791  weight=0.031102  tcost=0.990  overlap=0  kT -> kA
+  'j' -> 'o'  contrib=0.029012  weight=0.008242  tcost=3.520  overlap=1  kE+kN -> kN
+  'e' -> 'i'  contrib=0.029010  weight=0.006512  tcost=4.455  overlap=1  kA -> kA+kN
+
+Contribution totals by category:
+  self bigrams (a==b):            2.433223  (34.4%)
+  cross bigrams with overlap:     2.488193  (35.2%)
+  cross bigrams without overlap:  2.149875  (30.4%)
+  cross total (a!=b):             4.638068  (65.6%)
+  all bigrams total:              7.071291  (100.0%)
